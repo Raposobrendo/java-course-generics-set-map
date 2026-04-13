@@ -32,12 +32,11 @@ public class Client {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
-        return Objects.equals(name, client.name);
+        return Objects.equals(name, client.name) && Objects.equals(email, client.email);
     }
 
-    
     @Override
     public int hashCode() {
-        return Objects.hashCode(name);
+        return Objects.hash(name, email);
     }
 }
